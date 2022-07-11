@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/form" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>Create New User</a>
+        </h3>
+        <h1 th:text="${'Welcome ' +user.firstName}"></h1>
+        <h2 th:text="${'First Name : ' +user.firstName}"></h2>
+        <h2 th:text="${'Last Name : ' +user.lastName}"></h2>
+        <h2 th:text="${'Phone Number : ' +user.phoneNo}"></h2>
+        <h2 th:text="${'Address : ' +user.address}"></h2>
+        <h2 th:text="${'Place : ' +user.place}"></h2>
+
+    </div>
+</div>
+</body>
+</html>

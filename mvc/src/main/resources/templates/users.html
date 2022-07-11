@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+<head>
+    <title>Users List</title>
+    <link rel="stylesheet" href="../static/css/users.css" th:href="@{/css/users.css}">
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/form" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Create New User</a>
+        </h3>
+        <h2>Users List</h2>
+        <div class="table-responsive table-wrapper">
+            <table class="table fl-table" id="product-table">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Place</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.address}"></td>
+                    <td th:text="${user.phoneNo}"></td>
+                    <td th:text="${user.place}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
